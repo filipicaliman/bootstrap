@@ -15,7 +15,8 @@
     <div class="container my-3">
         <p><a href="index.html">Voltar ao Índice</a></p>
         <h1 class="display-2">Questão 10</h1>
-        <p class="lead">Usando somente estilos baseados em classes do Bootstrap 5, aprimore o formulário da questão 7 adiconando as seguintes situações de validação de campos:</p>
+        <p class="lead">Usando somente estilos baseados em classes do Bootstrap 5, aprimore o formulário da questão 7
+            adiconando as seguintes situações de validação de campos:</p>
         <ul class="lead">
             <li>O campo Nome Completo deve estar marcado como válido;</li>
             <li>O campo CPF deve estar marcado como inválido e com a mensagem de validação "Campo obrigatório";</li>
@@ -28,8 +29,68 @@
     </div>
     <!-- FAZER AQUI -->
     <div class="container">
+        <form class="need-validation" novalidate>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-6">
+                    <div class="form-floating my-3">
+                        <input type="text" name="" id="nome" class="form-control is-valid" value="Filipi Gomes Caliman"
+                            placeholder=" ">
+                        <label for="nome" class="form-label">Nome Completo</label>
+                    </div>
+                    <div class="row">
+                        <div class="form-floating col-lg-4 col-xl-6 my-3">
+                            <input type="number" name="" id="cpf" class="form-control is-invalid" placeholder=" ">
+                            <label for="nome" class="form-label">CPF</label>
+                            <div class="invalid-feedback">
+                                Campo obrigatório
+                            </div>
+                        </div>
+                        <div class="form-floating col-lg-4 col-xl-6 my-3">
+                            <input type="date" name="" id="aniversario" class="form-control is-valid" placeholder=" "
+                                value="1998-07-09">
+                            <label for="aniversario" class="form-label">Data de Nascimento</label>
+                        </div>
+                        <div class="col-lg-4 col-xl-6 my-3">
+                            <select name="" id="genero" class="form-select is-invalid">
+                                <option value="G">Selecione um Gênero...</option>
+                                <option value="M">Masculino</option>
+                                <option value="F">Feminino</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Campo obrigatório
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-floating">
+                        <textarea name="" id="endereco" class="form-control is-valid"
+                            placeholder=" ">Rua Miguel da Paixão Vasconcelos, 263</textarea>
+                        <label for="endereco" class="form-label">Endereço Completo</label>
+                    </div>
+                    <div>
+                        <button class="btn btn-success my-3">Salvar</button>
+                    </div>
 
+                </div>
+            </div>
+        </form>
     </div>
+
+    <script>
+        (() => {
+            'use strict'
+            const forms = document.querySelectorAll('.needs-validation')
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
 </body>
 
 </html>

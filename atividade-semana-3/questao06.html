@@ -15,12 +15,50 @@
     <div class="container my-3">
         <p><a href="index.html">Voltar ao Índice</a></p>
         <h1 class="display-2">Questão 06</h1>
-        <p class="lead">Usando somente estilos baseados em classes do Bootstrap 5, faça o mesmo formulário da questão 3, porém, com leiaute horizontal.</p>
+        <p class="lead">Usando somente estilos baseados em classes do Bootstrap 5, faça o mesmo formulário da questão 3,
+            porém, com leiaute horizontal.</p>
         <hr>
     </div>
     <!-- FAZER AQUI -->
     <div class="container">
+        <form>
+            <div class="w-50 mx-auto ">
+                <h1 class="display-3">Login</h1>
+                <hr>
+                <div class="row">
+                    <label for="perfil" class="form-label col-3">Perfil</label>
+                    <div class="col-9 mb-2">
+                        <select name="" id="perfil" class="form-select">
+                            <option value="">Selecione um perfil...</option>
+                            <option value="">Administrador</option>
+                            <option value="">Gerente</option>
+                            <option value="">Usuário</option>
+                        </select>
+                    </div>
+                    <label for="email" class="col-3 col-form-label">E-mail</label>
+                    <div class="col-9 mb-2">
+                        <input type="email" name="" id="email" class="form-control col-8"
+                            placeholder="Informe seu E-mail">
+                    </div>
 
+                    <label for="senha" class="form-label col-3">Senha</label>
+                    <div class="col-9 mb-2">
+                        <input type="password" name="" id="senha" class="form-control" placeholder="Digite sua senha">
+                    </div>
+                </div>
+                <div class="form-switch">
+                    <input type="checkbox" name="" id="check" class="form-check-input">
+                    <label for="check" class="form-label">Lembrar de mim</label>
+                </div>
+
+                <button class="btn btn-primary mt-3">Entrar</button>
+                <div class="row">
+                    <a href="#" class="text-decoration-none">Esqueci minha senha</a>
+                    <a href="#" class="text-decoration-none">Quero me cadastrar</a>
+                </div>
+            </div>
+
+        </form>
     </div>
 </body>
 
